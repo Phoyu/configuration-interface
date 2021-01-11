@@ -5,5 +5,6 @@ type Configuration interface {
   GetProperty(string) (string,error)
 
   AddRequiredProperty(string)
+  GetRequiredProperties() []string
   CheckRequiredProperties() error
 }

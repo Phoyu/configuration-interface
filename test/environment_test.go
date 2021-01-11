@@ -36,6 +36,13 @@ func TestCheckRequiredProperties(t *testing.T) {
     t.Fail()
   }
 
+  requiredProperties := []string{"TEST_PROPERTY","TEST_PROPERTY2"}
+  for i, value := range testConfiguration.GetRequiredProperties() {
+    if requiredProperties[i] != value {
+      t.Fail()
+    }
+  }
+
   os.Unsetenv("TEST_PROPERTY")
   os.Unsetenv("TEST_PROPERTY2")
 }

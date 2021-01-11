@@ -33,6 +33,10 @@ func (ec *EnvironmentConfiguration) AddRequiredProperty(property string) {
   ec.requiredProperties = append(ec.requiredProperties,property)
 }
 
+func (ec *EnvironmentConfiguration) GetRequiredProperties() []string {
+  return ec.requiredProperties
+}
+
 func (ec *EnvironmentConfiguration) CheckRequiredProperties() error {
   for _, property := range ec.requiredProperties {
     _, exists := os.LookupEnv(property)
