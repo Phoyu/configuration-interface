@@ -46,3 +46,7 @@ func (ec *EnvironmentConfiguration) CheckRequiredProperties() error {
   }
   return nil
 }
+
+func NewAppConfig() *configuration.AppConfig {
+  return configuration.NewAppConfig(NewConfiguration())
+}
